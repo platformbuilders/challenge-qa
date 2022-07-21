@@ -1,3 +1,4 @@
+import { ModalSheet } from "../../components";
 import styled from "styled-components/native";
 import { NightThunderstorm } from "../../assets";
 
@@ -7,19 +8,24 @@ export default function App() {
       <ImageWrapper>
         <Image source={NightThunderstorm} />
       </ImageWrapper>
-      <Paragraph>Open up App.tsx to start working on your app!</Paragraph>
+      <ModalSheet
+        title={`Explore climas locais socialmente, com o Sowe`}
+        paragraph={`Saiba quantas pessoas próximas a você reportaram chuva e receba um aviso antes de sair de casa.`}
+      />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.View`
-  justify-content: center;
   align-items: center;
   flex: 1;
   background-color: #af7dab;
 `;
 
-const ImageWrapper = styled.View``;
+const ImageWrapper = styled.View`
+  flex: 0.7;
+  justify-content: center;
+`;
 
 const Image = styled.Image`
   width: 200px;
