@@ -10,6 +10,7 @@ type Props = {
   onMainButtonPress: () => void;
   onSecondaryButtonPress: () => void;
   children: React.ReactNode;
+  header: React.ReactNode;
 };
 
 export default function ModalSheet({
@@ -19,10 +20,12 @@ export default function ModalSheet({
   secondaryButtonText,
   onMainButtonPress,
   onSecondaryButtonPress,
+  header,
   children,
 }: Props) {
   return (
     <Wrapper behavior="padding">
+      {header}
       <Title>{title}</Title>
       <Paragraph>{paragraph}</Paragraph>
       {mainButtonText && (

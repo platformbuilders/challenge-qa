@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { ModalSheet, TextInput } from "../../components";
+import { ModalSheet, TextInput, Counter } from "../../components";
 
 export default function PhoneScene() {
   const navigation = useNavigation();
@@ -13,6 +13,7 @@ export default function PhoneScene() {
     <Wrapper>
       <Title>Cadastro</Title>
       <ModalSheet
+        header={<Counter />}
         title={`Celular`}
         paragraph={`Você receberá um código de confirmação no número de telefone celular informado.`}
       >
