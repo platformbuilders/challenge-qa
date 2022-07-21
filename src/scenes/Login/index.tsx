@@ -1,8 +1,15 @@
-import { ModalSheet } from "../../components";
 import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
+import { ModalSheet } from "../../components";
 import { NightThunderstorm } from "../../assets";
 
-export default function App() {
+export default function LoginScene() {
+  const navigation = useNavigation();
+  const onCadastrar = () => {
+    navigation.navigate("PHONE");
+  };
+  const onEntrar = () => {};
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -11,12 +18,16 @@ export default function App() {
       <ModalSheet
         title={`Explore climas locais socialmente, com o Sowe`}
         paragraph={`Saiba quantas pessoas próximas a você reportaram chuva e receba um aviso antes de sair de casa.`}
+        mainButtonText={`Cadastrar`}
+        onMainButtonPress={onCadastrar}
+        onSecondaryButtonPress={onEntrar}
+        secondaryButtonText={`Entrar`}
       />
     </Wrapper>
   );
 }
 
-const Wrapper = styled.View`
+const Wrapper = styled.SafeAreaView`
   align-items: center;
   flex: 1;
   background-color: #af7dab;
@@ -30,8 +41,4 @@ const ImageWrapper = styled.View`
 const Image = styled.Image`
   width: 200px;
   height: 200px;
-`;
-
-const Paragraph = styled.Text`
-  color: white;
 `;
