@@ -7,10 +7,10 @@ type Props = {
   paragraph: string;
   mainButtonText?: string;
   secondaryButtonText?: string;
-  onMainButtonPress: () => void;
-  onSecondaryButtonPress: () => void;
-  children: React.ReactNode;
-  header: React.ReactNode;
+  onMainButtonPress?: () => void;
+  onSecondaryButtonPress?: () => void;
+  children?: React.ReactNode;
+  header?: React.ReactNode;
 };
 
 export default function ModalSheet({
@@ -31,9 +31,11 @@ export default function ModalSheet({
       {mainButtonText && (
         <ButtonRows>
           <Button onPress={onMainButtonPress}>{mainButtonText}</Button>
-          <SecondaryButton onPress={onSecondaryButtonPress}>
-            {secondaryButtonText}
-          </SecondaryButton>
+          {secondaryButtonText && (
+            <SecondaryButton onPress={onSecondaryButtonPress}>
+              {secondaryButtonText}
+            </SecondaryButton>
+          )}
         </ButtonRows>
       )}
       <ChildrenWrapper>{children}</ChildrenWrapper>
@@ -64,7 +66,9 @@ const Paragraph = styled.Text`
   line-height: 22px;
 `;
 
-const Button = styled(SButton)``;
+const Button = styled(SButton)`
+  flex: 1;
+`;
 
 const ButtonRows = styled.View`
   margin-top: 20px;
@@ -76,7 +80,7 @@ const ChildrenWrapper = styled.View`
   margin-vertical: 20px;
 `;
 
-const SecondaryButton = styled(SButton).attrs({
+const SecondaryButton = styled(Button).attrs({
   textStyle: {
     color: "#6238CF",
   },

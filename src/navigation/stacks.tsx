@@ -1,7 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-
-import { HomeScene, LoginScene, PhoneScene, NameScene } from "../scenes";
+import {
+  HomeScene,
+  LoginScene,
+  PhoneScene,
+  NameScene,
+  LocationScene,
+} from "../scenes";
 
 const Private = createStackNavigator();
 const Public = createStackNavigator();
@@ -14,6 +19,7 @@ export const PublicStack = (): JSX.Element => (
     <Public.Screen name="PHONE" component={PhoneScene} />
     <Private.Screen name="HOME" component={HomeScene} />
     <Private.Screen name="NAME" component={NameScene} />
+    <Private.Screen name="LOCATION" component={LocationScene} />
   </Public.Navigator>
 );
 

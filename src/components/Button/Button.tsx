@@ -23,7 +23,7 @@ export default function Button({
 const Wrapper = styled.TouchableOpacity`
   border-radius: 50px;
   background-color: #662ffe;
-  width: 140px;
+  min-width: 140px;
   padding-vertical: 15px;
   align-items: center;
 `;

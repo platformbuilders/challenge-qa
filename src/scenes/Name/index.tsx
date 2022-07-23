@@ -7,7 +7,7 @@ export default function NameScene() {
   const navigation = useNavigation();
   const [name, setName] = useState("");
   const onConfirmName = () => {
-    navigation.navigate("HOME");
+    navigation.navigate("LOCATION");
   };
   return (
     <Wrapper>
