@@ -1,7 +1,18 @@
 import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { ModalSheet, Counter } from "../../components";
+import { ModalSheet, Picker } from "../../components";
+
+const dates = [
+  {
+    label: "14:00",
+    value: "14:00",
+  },
+  {
+    label: "14:30",
+    value: "14:30",
+  },
+];
 
 export default function HomeScene() {
   const navigation = useNavigation();
@@ -22,7 +33,7 @@ export default function HomeScene() {
         secondaryButtonText={new Date().toLocaleString()}
         onSecondaryButtonPress={onConfirmLocation}
       >
-        <Counter />
+        <Picker horizontal data={dates} selected={"14:30"} />
       </ModalSheet>
     </Wrapper>
   );
