@@ -10,7 +10,7 @@ interface Data {
 
 interface Props {
   onChange?(value: any): void;
-  selected?: number;
+  selected?: string | number;
   horizontal?: boolean;
   contrast?: boolean;
   data: Data[];

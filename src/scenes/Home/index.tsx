@@ -3,19 +3,24 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { ModalSheet, Picker } from "../../components";
 
-const dates = [
-  {
-    label: "14:00",
-    value: "14:00",
-  },
-  {
-    label: "14:30",
-    value: "14:30",
-  },
-];
+const dates = [];
+
+const generateDates = () => {
+  const hoursNow = new Date().getHours();
+  const diff = 4;
+  for (let i = hoursNow - diff; i < hoursNow + diff; i++) {
+    dates.push({
+      label: `${i}:00`,
+      value: `${i}:00`,
+    });
+  }
+};
+
+generateDates();
 
 export default function HomeScene() {
   const navigation = useNavigation();
+  const hoursNow = new Date().getHours();
   const onConfirmLocation = () => {
     Alert.alert(
       "Compartilhar a localização",
@@ -30,10 +35,10 @@ export default function HomeScene() {
     <Wrapper>
       <Title>Sowe</Title>
       <ModalSheet
-        secondaryButtonText={new Date().toLocaleString()}
+        secondaryButtonText={new Date().toLocaleDateString()}
         onSecondaryButtonPress={onConfirmLocation}
       >
-        <Picker horizontal data={dates} selected={"14:30"} />
+        <Picker horizontal data={dates} selected={`${hoursNow}:00`} />
       </ModalSheet>
     </Wrapper>
   );
