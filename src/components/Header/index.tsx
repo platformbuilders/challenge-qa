@@ -1,11 +1,13 @@
 import styled from "styled-components/native";
-import { NightThunderstorm } from "../../assets";
 
 export default function App() {
   return (
     <Wrapper>
-      <Text>Bairro do Clima Bom</Text>
-      <BoldText>Sorocaba, SP</BoldText>
+      <Title>Sowe</Title>
+      <LocationWrapper>
+        <Text>Bairro do Clima Bom</Text>
+        <BoldText>Sorocaba, SP</BoldText>
+      </LocationWrapper>
     </Wrapper>
   );
 }
@@ -13,18 +15,25 @@ export default function App() {
 const Wrapper = styled.View`
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  flex-direction: row;
+  padding: 20px;
+`;
+
+const LocationWrapper = styled.View`
+  align-items: flex-end;
+`;
+
+const Title = styled.Text`
+  padding-horizontal: 25px;
+  color: #453773;
+  font-size: 42px;
+  font-weight: 800;
 `;
 
 const Text = styled.Text`
-  justify-content: right;
+  color: #453773;
 `;
 
 const BoldText = styled(Text)`
-  color: #
-`;
-
-const Image = styled.Image`
-  width: 200px;
-  height: 200px;
+  font-weight: bold;
 `;

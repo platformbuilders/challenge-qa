@@ -1,7 +1,7 @@
 import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { ModalSheet, Picker } from "../../components";
+import { ModalSheet, Picker, Header } from "../../components";
 
 const dates = [];
 
@@ -33,7 +33,7 @@ export default function HomeScene() {
   };
   return (
     <Wrapper>
-      <Title>Sowe</Title>
+      <Header />
       <ModalSheet
         secondaryButtonText={new Date().toLocaleDateString("pt-BR", {
           dateStyle: "long",
@@ -50,8 +50,6 @@ const Wrapper = styled.SafeAreaView`
   flex: 1;
   background-color: #e8e1f9;
 `;
-
-const HeaderWrapper = styled.View``;
 
 const Title = styled.Text`
   padding-horizontal: 25px;
