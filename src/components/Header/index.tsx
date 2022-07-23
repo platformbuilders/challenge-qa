@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export default function App() {
+export default function Header() {
   return (
     <Wrapper>
       <Title>Sowe</Title>
