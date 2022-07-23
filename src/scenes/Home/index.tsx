@@ -1,7 +1,7 @@
 import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { ModalSheet, Picker, Header, ImageWrapper } from "../../components";
+import { ModalSheet, Picker, Header, ImageWrapper, WindWrapper } from "../../components";
 
 const dates = [];
 
@@ -35,6 +35,7 @@ export default function HomeScene() {
     <Wrapper>
       <Header />
       <ImageWrapper />
+      <WindWrapper />
       <ModalSheet
         secondaryButtonText={new Date().toLocaleDateString("pt-BR", {
           dateStyle: "long",
