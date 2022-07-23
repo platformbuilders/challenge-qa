@@ -1,14 +1,18 @@
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ModalSheet } from "../../components";
 import { NightThunderstorm } from "../../assets";
 
 export default function LoginScene() {
   const navigation = useNavigation();
+
   const onCadastrar = () => {
     navigation.navigate("PHONE");
   };
-  const onEntrar = () => {
+
+  const onEntrar = async () => {
+    await AsyncStorage.setItem("token", "123");
     navigation.navigate("STACK_PRIVATE");
   };
 

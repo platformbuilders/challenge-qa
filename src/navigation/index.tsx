@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { PrivateStack, PublicStack } from "./stacks";
@@ -9,19 +10,18 @@ type Props = {
   token?: string;
 };
 
-export const Navigation: React.FC<Props> = ({ token }) => {
-  const navigatorOptions = {
-    headerShown: false,
-  };
-  return (
-    <NavigationContainer>
-      <MainStack.Navigator
-        screenOptions={navigatorOptions}
-        initialRouteName="STACK_PUBLIC"
-      >
-        <MainStack.Screen name="STACK_PRIVATE" component={PrivateStack} />
-        <MainStack.Screen name="STACK_PUBLIC" component={PublicStack} />
-      </MainStack.Navigator>
-    </NavigationContainer>
-  );
+const navigatorOptions = {
+  headerShown: false,
 };
+
+export const Navigation: React.FC<Props> = ({ token }) => (
+  <NavigationContainer>
+    <MainStack.Navigator
+      screenOptions={navigatorOptions}
+      initialRouteName={ !!token ? "STACK_PRIVATE" : "STACK_PUBLIC" }
+    >
+      <MainStack.Screen name="STACK_PRIVATE" component={PrivateStack} />
+      <MainStack.Screen name="STACK_PUBLIC" component={PublicStack} />
+    </MainStack.Navigator>
+  </NavigationContainer>
+);

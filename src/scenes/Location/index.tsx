@@ -1,17 +1,24 @@
 import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ModalSheet, Counter } from "../../components";
 
 export default function LocationScene() {
   const navigation = useNavigation();
+
+  const onLogin = async () => {
+    await AsyncStorage.setItem("token", "123");
+    navigation.navigate("STACK_PRIVATE");
+  }
+
   const onConfirmLocation = () => {
     Alert.alert(
       "Compartilhar a localização",
       "Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet.",
       [
         { text: "Não", style: "cancel" },
-        { text: "Sim", onPress: () => navigation.navigate("STACK_PRIVATE") },
+        { text: "Sim", onPress: onLogin },
       ]
     );
   };
