@@ -3,25 +3,20 @@ import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ModalSheet, TextInput, Counter } from "../../components";
 
-export default function PhoneScene() {
+export default function NameScene() {
   const navigation = useNavigation();
-  const [phone, setPhone] = useState("");
-  const onConfirmPhone = () => {
-    navigation.navigate("NAME");
+  const [name, setName] = useState("");
+  const onConfirmName = () => {
+    navigation.navigate("HOME");
   };
   return (
     <Wrapper>
       <Title>Cadastro</Title>
-      <ModalSheet
-        header={<Counter />}
-        title={`Celular`}
-        paragraph={`Você receberá um código de confirmação no número de telefone celular informado.`}
-      >
+      <ModalSheet header={<Counter />} title={`Nome`}>
         <TextInput
-          maxLength={11}
-          isValid={phone.length === 11}
-          onChangeText={setPhone}
-          onConfirm={phone.length === 11 && onConfirmPhone}
+          isValid={name.split(" ").length >= 2}
+          onChangeText={setName}
+          onConfirm={name.split(" ").length >= 2 && onConfirmName}
           autoFocus
         />
       </ModalSheet>

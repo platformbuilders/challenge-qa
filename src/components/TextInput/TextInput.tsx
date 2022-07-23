@@ -30,6 +30,7 @@ const Wrapper = styled.View`
   padding-horizontal: 15px;
   flex-direction: row;
   flex: 1;
+  min-height: 50px;
 `;
 
 const ConfirmButtonText = styled.Text`

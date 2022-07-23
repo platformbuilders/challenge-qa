@@ -27,7 +27,7 @@ export default function ModalSheet({
     <Wrapper behavior="padding">
       {header}
       <Title>{title}</Title>
-      <Paragraph>{paragraph}</Paragraph>
+      {paragraph && <Paragraph>{paragraph}</Paragraph>}
       {mainButtonText && (
         <ButtonRows>
           <Button onPress={onMainButtonPress}>{mainButtonText}</Button>
@@ -46,7 +46,7 @@ const Wrapper = styled.KeyboardAvoidingView`
   position: absolute;
   bottom: 0;
   align-self: flex-end;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 100%;
   padding-vertical: 26px;
   padding-horizontal: 22px;
