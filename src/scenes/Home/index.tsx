@@ -35,7 +35,9 @@ export default function HomeScene() {
     <Wrapper>
       <Title>Sowe</Title>
       <ModalSheet
-        secondaryButtonText={new Date().toLocaleDateString()}
+        secondaryButtonText={new Date().toLocaleDateString("pt-BR", {
+          dateStyle: "long",
+        })}
         onSecondaryButtonPress={onConfirmLocation}
       >
         <Picker horizontal data={dates} selected={`${hoursNow}:00`} />
