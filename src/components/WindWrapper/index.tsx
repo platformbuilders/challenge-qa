@@ -24,11 +24,11 @@ export default function WindComponent() {
         </SmallTextWrapper>
         <SmallTextWrapper>
           <MediumText>46%</MediumText>
-          <SmallText>UMIDADE</SmallText>
+          <SmallText>HUMIDADE</SmallText>
         </SmallTextWrapper>
         <SmallTextWrapper>
           <MediumText>32˚C</MediumText>
-          <SmallText>SENSAÇÃO</SmallText>
+          <SmallText>JÁ É SENSASSÃO</SmallText>
         </SmallTextWrapper>
       </TextWrapper>
     </Wrapper>
@@ -37,7 +37,7 @@ export default function WindComponent() {
 
 const Wrapper = styled.View`
   align-items: center;
-  background-color: #FFFFFF75;
+  background-color: #ffffff75;
   margin: 5%;
   border-radius: 20px;
 `;

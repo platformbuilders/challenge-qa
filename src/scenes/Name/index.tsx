@@ -12,7 +12,7 @@ export default function NameScene() {
   return (
     <Wrapper>
       <Title>Cadastro</Title>
-      <ModalSheet header={<Counter />} title={`Nome`}>
+      <ModalSheet header={<Counter />} title={`Nome Completo`}>
         <TextInput
           isValid={name.split(" ").length >= 2}
           onChangeText={setName}
