@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 import SButton from "../Button/Button";
 
 type Props = {
-  title: string;
-  paragraph: string;
+  title?: string;
+  paragraph?: string;
   mainButtonText?: string;
   secondaryButtonText?: string;
   onMainButtonPress?: () => void;
@@ -26,11 +26,14 @@ export default function ModalSheet({
   return (
     <Wrapper behavior="padding">
       {header}
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       {paragraph && <Paragraph>{paragraph}</Paragraph>}
-      {mainButtonText && (
+      {children && <ChildrenWrapper>{children}</ChildrenWrapper>}
+      {(mainButtonText || secondaryButtonText) && (
         <ButtonRows>
-          <Button onPress={onMainButtonPress}>{mainButtonText}</Button>
+          {mainButtonText && (
+            <Button onPress={onMainButtonPress}>{mainButtonText}</Button>
+          )}
           {secondaryButtonText && (
             <SecondaryButton onPress={onSecondaryButtonPress}>
               {secondaryButtonText}
@@ -38,7 +41,6 @@ export default function ModalSheet({
           )}
         </ButtonRows>
       )}
-      <ChildrenWrapper>{children}</ChildrenWrapper>
     </Wrapper>
   );
 }

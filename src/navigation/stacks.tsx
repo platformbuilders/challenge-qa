@@ -14,7 +14,7 @@ const Public = createStackNavigator();
 const defaultOptions = { headerShown: false };
 
 export const PublicStack = (): JSX.Element => (
-  <Public.Navigator initialRouteName="LOGIN" screenOptions={defaultOptions}>
+  <Public.Navigator initialRouteName="HOME" screenOptions={defaultOptions}>
     <Public.Screen name="LOGIN" component={LoginScene} />
     <Public.Screen name="PHONE" component={PhoneScene} />
     <Private.Screen name="HOME" component={HomeScene} />
