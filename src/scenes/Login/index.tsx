@@ -8,7 +8,9 @@ export default function LoginScene() {
   const onCadastrar = () => {
     navigation.navigate("PHONE");
   };
-  const onEntrar = () => {};
+  const onEntrar = () => {
+    navigation.navigate("STACK_PRIVATE");
+  };
 
   return (
     <Wrapper>

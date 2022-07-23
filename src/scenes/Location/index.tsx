@@ -11,7 +11,7 @@ export default function LocationScene() {
       "Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet.",
       [
         { text: "Não", style: "cancel" },
-        { text: "Sim", onPress: () => navigation.navigate("HOME") },
+        { text: "Sim", onPress: () => navigation.navigate("STACK_PRIVATE") },
       ]
     );
   };
