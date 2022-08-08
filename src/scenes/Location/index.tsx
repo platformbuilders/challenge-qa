@@ -2,9 +2,11 @@ import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ModalSheet, Counter } from "../../components";
+import { ModalSheet, Counter, Modal } from "../../components";
+import { useState } from "react";
 
 export default function LocationScene() {
+  const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
 
   const onLogin = async () => {
@@ -12,16 +14,6 @@ export default function LocationScene() {
     navigation.navigate("STACK_PRIVATE");
   }
 
-  const onConfirmLocation = () => {
-    Alert.alert(
-      "Compartilhar a localização",
-      "Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet.",
-      [
-        { text: "Não", style: "cancel" },
-        { text: "Sim", onPress: onLogin },
-      ]
-    );
-  };
   return (
     <Wrapper>
       <Title>Cadastro</Title>
@@ -30,7 +22,18 @@ export default function LocationScene() {
         title={`Localização`}
         paragraph={`Para entregarmos informações mais precisas sobre o seu micro-clima, precisamos utilizar a sua localização automática.`}
         mainButtonText={`LOCALIZAÇÃO AUTOMÁTICA`}
-        onMainButtonPress={onConfirmLocation}
+        onMainButtonPress={() => setModalVisible(true)}
+      />
+      <Modal
+        isVisible={modalVisible}
+        title="Compartilhar a localização"
+        subTitle="Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet."
+        onNo={() => setModalVisible(false)}
+        onYes={() => {
+            setModalVisible(false);
+            onLogin();
+          }
+        }
       />
     </Wrapper>
   );

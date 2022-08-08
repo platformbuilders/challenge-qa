@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import SButton from "../Button/Button";
+import SButton from "../Button";
 
 type Props = {
   title?: string;

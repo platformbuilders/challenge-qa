@@ -1,7 +1,8 @@
 import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { ModalSheet, Picker, Header, ImageWrapper, WindWrapper } from "../../components";
+import { ModalSheet, Picker, Header, ImageWrapper, Modal, WindWrapper } from "../../components";
+import { useState } from "react";
 
 const dates = [];
 
@@ -19,18 +20,9 @@ const generateDates = () => {
 generateDates();
 
 export default function HomeScene() {
+  const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
   const hoursNow = new Date().getHours();
-  const onConfirmLocation = () => {
-    Alert.alert(
-      "Compartilhar a localização",
-      "Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet.",
-      [
-        { text: "Não", style: "cancel" },
-        { text: "Sim", onPress: () => navigation.navigate("HOME") },
-      ]
-    );
-  };
   return (
     <Wrapper>
       <Header />
@@ -40,10 +32,21 @@ export default function HomeScene() {
         secondaryButtonText={new Date().toLocaleDateString("pt-BR", {
           dateStyle: "long",
         })}
-        onSecondaryButtonPress={onConfirmLocation}
+        onSecondaryButtonPress={() => setModalVisible(true)}
       >
         <Picker horizontal data={dates} selected={`${hoursNow}:00`} />
       </ModalSheet>
+      <Modal
+        isVisible={modalVisible}
+        title="Compartilhar a localização"
+        subTitle="Blablabla, enquanto usa o app. Lorem ipsum dolor sit amet."
+        onNo={() => setModalVisible(false)}
+        onYes={() => {
+            setModalVisible(false);
+            navigation.navigate("HOME");
+          }
+        }
+      />
     </Wrapper>
   );
 }

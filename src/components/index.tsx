@@ -1,8 +1,9 @@
-export { default as ModalSheet } from "./ModalSheet/ModalSheet";
-export { default as Button } from "./Button/Button";
-export { default as TextInput } from "./TextInput/TextInput";
-export { default as Counter } from "./Counter/Counter";
-export { default as Picker } from "./Picker/Picker";
+export { default as ModalSheet } from "./ModalSheet";
+export { default as Button } from "./Button";
+export { default as TextInput } from "./TextInput";
+export { default as Counter } from "./Counter";
+export { default as Picker } from "./Picker";
 export { default as Header } from "./Header";
 export { default as ImageWrapper } from "./ImageWrapper";
 export { default as WindWrapper } from "./WindWrapper";
+export { default as Modal } from "./Modal";
