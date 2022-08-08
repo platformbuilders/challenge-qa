@@ -34,3 +34,10 @@ TypeScript is a superset of JavaScript which gives you static types and powerful
 ## 📝 Notes
 
 - [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+
+## Keystore credentials
+  Keystore password: 6240c2439ee843c583b521fd62fe2aa5
+  Key alias:         QGVkdXNwYWRhL2NoYWxsZW5nZS1xYQ==
+  Key password:      e14803fc64f64ec5a92a5f0ab2496293
+
+  Path to Keystore:  ./challenge-qa.jks
