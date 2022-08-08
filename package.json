@@ -6,7 +6,17 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:android": "expo build:android -t apk",
+    "build:status": "expo build:status"
+  },
+  "ios": {
+    "bundleIdentifier": "br.com.platformbuilders.challenge.qa",
+    "buildNumber": "1.0.0"
+  },
+  "android": {
+    "package": "br.com.platformbuilders.challenge.qa",
+    "versionCode": 1
   },
   "dependencies": {
     "@platformbuilders/helpers": "^0.4.6",
