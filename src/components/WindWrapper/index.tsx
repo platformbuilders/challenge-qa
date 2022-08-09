@@ -4,29 +4,29 @@ export default function WindComponent() {
   return (
     <Wrapper>
       <TextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="0% CHANCE CH.">
           <MediumText>0%</MediumText>
           <SmallText>CHANCE CH.</SmallText>
         </SmallTextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="0mm CHUVA">
           <MediumText>0mm</MediumText>
           <SmallText>CHUVA</SmallText>
         </SmallTextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="36km/h VENTO">
           <MediumText>36km/h</MediumText>
           <SmallText>VENTO</SmallText>
         </SmallTextWrapper>
       </TextWrapper>
       <TextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="5 RAIOS UV">
           <MediumText>5</MediumText>
           <SmallText>RAIOS UV</SmallText>
         </SmallTextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="46% HUMIDADE">
           <MediumText>46%</MediumText>
           <SmallText>HUMIDADE</SmallText>
         </SmallTextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="32˚C JÁ É SENSASSÃO">
           <MediumText>32˚C</MediumText>
           <SmallText>JÁ É SENSASSÃO</SmallText>
         </SmallTextWrapper>

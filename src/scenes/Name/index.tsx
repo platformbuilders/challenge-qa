@@ -11,13 +11,14 @@ export default function NameScene() {
   };
   return (
     <Wrapper>
-      <Title>Cadastro</Title>
+      <Title accessibilityLabel="Cadastro">Cadastro</Title>
       <ModalSheet header={<Counter />} title={`Nome Completo`}>
         <TextInput
           isValid={name.split(" ").length >= 2}
           onChangeText={setName}
           onConfirm={name.split(" ").length >= 2 && onConfirmName}
           autoFocus
+          accessibilityLabel="Insira o nome completo"
         />
       </ModalSheet>
     </Wrapper>

@@ -23,6 +23,7 @@ export default function PhoneScene() {
           onChangeText={setPhone}
           onConfirm={phone.length === 11 && onConfirmPhone}
           autoFocus
+          accessibilityLabel="insira o numero de celular"
         />
       </ModalSheet>
     </Wrapper>

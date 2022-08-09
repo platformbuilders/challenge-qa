@@ -8,12 +8,12 @@ export default function ImageComponent() {
         <Image source={NightThunderstorm} />
       </ImageWrapper>
       <TextWrapper>
-        <BigText>28˚</BigText>
-        <SmallTextWrapper>
+        <BigText accessibilityLabel="Temperatura atual 28˚">28˚</BigText>
+        <SmallTextWrapper accessibilityLabel="Baixa 18˚">
           <MediumText>18˚</MediumText>
           <SmallText>BAIXA</SmallText>
         </SmallTextWrapper>
-        <SmallTextWrapper>
+        <SmallTextWrapper accessibilityLabel="Alta 31˚">
           <MediumText>31˚</MediumText>
           <SmallText>ALTA</SmallText>
         </SmallTextWrapper>
