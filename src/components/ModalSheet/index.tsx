@@ -26,8 +26,8 @@ export default function ModalSheet({
   return (
     <Wrapper behavior="padding">
       {header}
-      {title && <Title>{title}</Title>}
-      {paragraph && <Paragraph>{paragraph}</Paragraph>}
+      {title && <Title accessibilityLabel = {title}>{title}</Title>}
+      {paragraph && <Paragraph accessibilityLabel = {paragraph}>{paragraph}</Paragraph>}
       {children && <ChildrenWrapper>{children}</ChildrenWrapper>}
       {(mainButtonText || secondaryButtonText) && (
         <ButtonRows>

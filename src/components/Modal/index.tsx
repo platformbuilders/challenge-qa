@@ -49,8 +49,8 @@ const ModalComponent: React.FC<Props> = ({
   }) => (
     <Modal isVisible={isVisible}>
       <ModalContent>
-        <ModalTitle>{title}</ModalTitle>
-        <ModalSubtitle>{subTitle}</ModalSubtitle>
+        <ModalTitle accessibilityLabel={title}>{title}</ModalTitle>
+        <ModalSubtitle accessibilityLabel={subTitle}>{subTitle}</ModalSubtitle>
         <Button onPress={onYes}>{yesText}</Button>
         <Divider />
         <Button onPress={onNo}>{noText}</Button>

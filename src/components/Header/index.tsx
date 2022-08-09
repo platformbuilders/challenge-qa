@@ -8,12 +8,12 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Title>Sowe</Title>
+      <Title accessibilityLabel="Sowe">Sowe</Title>
       <LocationWrapper>
-        <Text>Bairro do Clima Bom</Text>
-        <BoldText>Sorocaba, SP</BoldText>
+        <Text accessibilityLabel="Bairro do Clima Bom">Bairro do Clima Bom</Text>
+        <BoldText accessibilityLabel="Sorocaba, SP">Sorocaba, SP</BoldText>
         <Link onPress={onPress}>
-          <LinkText>Sair</LinkText>
+          <LinkText accessibilityLabel="Botão Sair">Sair</LinkText>
         </Link>
       </LocationWrapper>
     </Wrapper>

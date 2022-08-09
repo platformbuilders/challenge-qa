@@ -14,7 +14,7 @@ export default function Button({
   ...rest
 }: Props) {
   return (
-    <Wrapper onPress={onPress} {...rest}>
+    <Wrapper accessibilityLabel = {children} onPress={onPress} {...rest}>
       <Text style={textStyle}>{children}</Text>
     </Wrapper>
   );

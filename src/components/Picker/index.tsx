@@ -35,7 +35,7 @@ const Picker: FC<Props> = ({
     keyExtractor={(item: Data): string => item.label}
     renderItem={({ item }: any): JSX.Element => (
       <NumberWrapper isSelected={item.value === selected}>
-        <Number isSelected={item.value === selected}>{item.label}</Number>
+        <Number accessibilityLabel={`horario ${item.label}`} isSelected={item.value === selected}>{item.label}</Number>
       </NumberWrapper>
     )}
   />
@@ -45,6 +45,7 @@ const isSelected = ifStyle("isSelected");
 
 interface NumberWrapperProps {
   isSelected: boolean;
+  accessibilityLabel: string;
 }
 
 export const NumberWrapper = styled.View<NumberWrapperProps>`

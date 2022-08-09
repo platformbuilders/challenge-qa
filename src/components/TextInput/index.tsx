@@ -5,17 +5,19 @@ import { TextInput, TextInputProps } from "react-native";
 type Props = {
   onConfirm: () => void;
   isValid?: boolean;
+  accessibilityLabel: string;
 } & TextInputProps;
 
 export default function CustomTextInput({
   onConfirm,
   isValid = true,
-  ...rest
+  accessibilityLabel,
+...rest
 }: Props) {
   return (
     <Wrapper>
-      <StyledTextInput {...rest} />
-      <ConfirmButton onPress={onConfirm} disabled={!isValid}>
+      <StyledTextInput accessibilityLabel={accessibilityLabel} {...rest} />
+      <ConfirmButton accessibilityLabel="Botao Avancar" onPress={onConfirm} disabled={!isValid}>
         <ConfirmButtonText> {">"} </ConfirmButtonText>
       </ConfirmButton>
     </Wrapper>
